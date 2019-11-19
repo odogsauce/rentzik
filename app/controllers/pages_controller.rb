@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
-  def home
+  def dashboard
+    @user = current_user
+    @instruments = @user.instruments
   end
 end

@@ -1,0 +1,8 @@
+   <div class="container">
+    <%= simple_form_for [@instrument] do |f| %>
+    <%= f.input :description %>
+    <%= f.input :category %>
+    <%= f.input :unit_price %>
+    <%= f.submit "Save instrument", class: "btn btn-success" %>
+    <% end %>
+   </div>
