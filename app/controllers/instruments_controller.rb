@@ -13,8 +13,7 @@ class InstrumentsController < ApplicationController
 
   def create
     @instrument = Instrument.new(instruments_params)
-    # @user = User.find(params[:user_id])
-    # @instrument.user = @user
+    @instrument.user = current_user
     if @instrument.save
       redirect_to "/"
     else
@@ -27,11 +26,17 @@ class InstrumentsController < ApplicationController
   end
 
   def update
-    @instrument.update(instruments_params)
-    redirect_to instrument_path
+    @instrument = Instrument.find(params[:id])
+    @instrument.user = current_user
+    if @instrument.update(instruments_params)
+      redirect_to instrument_path
+    else
+      render :new
+    end
   end
 
   def destroy
+    @instrument = Instrument.find(params[:id])
     @instrument.destroy
     redirect_to instruments_path
   end
