@@ -1,3 +1,4 @@
+
 u = User.new(email: "a@a.com", password: "azerty", username:"aaa", owner:false)
 u.save
 u = User.new(email: "b@b.com", password: "azerty", username:"bbb", owner:true)
