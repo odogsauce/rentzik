@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row" >
+    <% @instruments.each do |instrument| %>
+      <div class="col-4">
+        <div class="card-trip">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= instrument.description %></h2>
+                <%= link_to instrument.description, instrument_path(instrument), class: 'btn btn-secondary' %>
+                <p><%= instrument.category %></p>
+              </div>
+              <h2 class="card-trip-pricing"><%= instrument.unit_price %></h2>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>
