@@ -2,8 +2,7 @@ class InstrumentsController < ApplicationController
   before_action :set_instrument, only: [:show, :edit, :update, :destroy]
 
   def index
-    @user = current_user
-    @instruments = @user.instruments
+    @instruments = Instrument.all
   end
 
   def show
