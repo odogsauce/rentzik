@@ -1,10 +1,12 @@
 class InstrumentsController < ApplicationController
+  before_action :set_instrument, only: [:show, :edit, :update, :destroy]
+
   def index
-    @instruments = Instrument.all
+    @user = current_user
+    @instruments = @user.instruments
   end
 
   def show
-    @instrument = Instrument.find(params[:id])
   end
 
   def new
@@ -22,11 +24,9 @@ class InstrumentsController < ApplicationController
   end
 
   def edit
-    @instrument = Instrument.find(params[:id])
   end
 
   def update
-    @instrument = Instrument.find(params[:id])
     @instrument.user = current_user
     if @instrument.update(instruments_params)
       redirect_to instrument_path
@@ -36,7 +36,6 @@ class InstrumentsController < ApplicationController
   end
 
   def destroy
-    @instrument = Instrument.find(params[:id])
     @instrument.destroy
     redirect_to instruments_path
   end
@@ -46,4 +45,9 @@ class InstrumentsController < ApplicationController
   def instruments_params
     params.require(:instrument).permit(:description, :unit_price, :category, :user_id)
   end
+
+  def set_instrument
+     @instrument = Instrument.find(params[:id])
+  end
 end
+
