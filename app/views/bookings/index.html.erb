@@ -1,0 +1,10 @@
+<div class="container">
+  <%= @instrument.description %>
+
+  <% @bookings.each do |booking| %>
+    <div class="card">
+      <span>Début de la réservation : <%= booking.begin_at %></span>
+      <span>Fin de la réservation : <%= booking.end_at %></span>
+    </div>
+  <% end %>
+</div>
