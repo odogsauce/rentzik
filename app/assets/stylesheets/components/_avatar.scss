@@ -3,14 +3,14 @@
   border-radius: 50%;
 }
 .avatar-large {
-  width: 120px;
+  width: 100px;
   border-radius: 50%;
   margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50px;
-
+  display: flex;
+  justify-content: center;
 }
+
+
 .avatar-bordered {
   width: 40px;
   border-radius: 50%;
@@ -22,4 +22,9 @@
   border-radius: 0px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
+}
+
+.border-secondary{
+  height: 400px;
+  margin: 15px;
 }
