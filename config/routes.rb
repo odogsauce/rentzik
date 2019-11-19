@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   resources :instruments do
     resources :bookings
   end
-
+    namespace :owner do
+     resources :bookings, only: [:index, :show]
+   end
 end
