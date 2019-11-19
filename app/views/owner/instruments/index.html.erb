@@ -7,7 +7,7 @@
             <div class="card-trip-infos">
               <div>
                 <h2><%= instrument.description %></h2>
-                <%= link_to instrument.description, instrument_path(instrument), class: 'btn btn-secondary' %>
+                <%= link_to instrument.description, owner_instrument_path(instrument), class: 'btn btn-secondary' %>
                 <p><%= instrument.category %></p>
               </div>
               <h2 class="card-trip-pricing"><%= instrument.unit_price %></h2>
@@ -15,6 +15,6 @@
           </div>
         </div>
     <% end %>
-    <%= link_to "add an instrument", new_instrument_path(@instrument) %>
+    <%= link_to "add an instrument", new_owner_instrument_path(@instrument) %>
   </div>
 </div>

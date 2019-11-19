@@ -9,17 +9,9 @@ class InstrumentsController < ApplicationController
   end
 
   def new
-    @instrument = Instrument.new
   end
 
   def create
-    @instrument = Instrument.new(instruments_params)
-    @instrument.user = current_user
-    if @instrument.save
-      redirect_to "/"
-    else
-      render :new
-    end
   end
 
   def edit
