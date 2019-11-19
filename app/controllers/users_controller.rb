@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-
   def index
+    @user = current_user
+    @instruments = @user.instruments
   end
 
   def new
@@ -17,5 +18,4 @@ class UsersController < ApplicationController
 
   def destroy
   end
-
 end
