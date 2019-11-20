@@ -4,6 +4,15 @@ class InstrumentsController < ApplicationController
 
   def index
     @instruments = Instrument.all
+
+    # @instruments = Instrument.geocoded #returns flats with coordinates
+
+    # @markers = @instruments.map do |instrument|
+    #   {
+    #     lat: instrument.user.latitude,
+    #     lng: instrument.user.longitude
+    #   }
+    # end
   end
 
   def show
