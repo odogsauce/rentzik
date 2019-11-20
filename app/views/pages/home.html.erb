@@ -15,9 +15,9 @@
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Dates">
     <small id="emailHelp" class="form-text text-muted">Le jour qui vous intéresse.</small>
   </div>
-  <button type="submit" class="btn btn-success">Submit</button>
+  <%= link_to "SUBMIT", instruments_path, :class => "btn btn-success" %>
 </form>
-
+instruments
 <div class="d-flex flex-wrap justify-content-between">
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_url "cables.jpg" %>)">
     Câbles
