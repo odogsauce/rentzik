@@ -1,0 +1,8 @@
+<div class="container">
+    <%= simple_form_for([@instrument, @booking]) do |f| %>
+    <%= f.input :begin_at %>
+    <%= f.input :end_at %>
+    <%= f.input :final_price %>
+    <%= f.submit "Rent instrument", class: "btn btn-success" %>
+    <% end %>
+   </div>
