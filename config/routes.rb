@@ -9,8 +9,6 @@ Rails.application.routes.draw do
   end
   namespace :owner do
     resources :instruments
-    resources :bookings, only: [:index, :show]
+    resources :bookings, only: [:index, :show, :destroy]
   end
-
-
 end
