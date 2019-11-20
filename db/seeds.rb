@@ -1,7 +1,7 @@
 
-u = User.new(email: "a@a.com", password: "azerty", username:"aaa", address:"35 Rue Renière", owner:false)
+u = User.new(email: "a@a.com", password: "azerty", username:"aaa", address:"35 Rue Renière, Bordeaux", owner:false)
 u.save
-u = User.new(email: "b@b.com", password: "azerty", username:"bbb", address:"40 Rue Fondaudège", owner:true)
+u = User.new(email: "b@b.com", password: "azerty", username:"bbb", address:"40 Rue Fondaudège, Bordeaux", owner:true)
 u.save
 
 i = Instrument.new(description: "violon", category: "cordes", unit_price: 10, user: u)
