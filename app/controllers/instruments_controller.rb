@@ -18,12 +18,6 @@ class InstrumentsController < ApplicationController
   end
 
   def update
-    @instrument.user = current_user
-    if @instrument.update(instruments_params)
-      redirect_to instrument_path
-    else
-      render :new
-    end
   end
 
   def destroy
