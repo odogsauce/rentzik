@@ -19,6 +19,17 @@ class Owner::InstrumentsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    @instrument.user = current_user
+    if @instrument.update(instruments_params)
+      redirect_to owner_instruments_path
+    else
+      render :new
+    end
+  end
 
   def destroy
     @instrument.destroy

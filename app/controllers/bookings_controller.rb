@@ -6,6 +6,7 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+
     @instrument = Instrument.find(params[:instrument_id])
   end
 
