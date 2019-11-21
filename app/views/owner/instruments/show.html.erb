@@ -1,10 +1,15 @@
+<div class='text-center'> <h1>Présentation de l'instrument.</h1> </div>
 <h2><%= @instrument.description %></h2>
-  <%= @instrument.description %>
   <%= @instrument.category %>
+  <br>
   <% if !current_user.nil? %>
-    <%= link_to "Edit", edit_owner_instrument_path(@instrument), class: 'btn btn-secondary' %>
-    <%= link_to "Delete",  owner_instrument_path(@instrument), method: :delete, class: 'btn btn-secondary' %>
+    <%= link_to  edit_owner_instrument_path(@instrument), class: 'btn btn-secondary' do %>
+      <i class="fa fa-edit fa-lg"></i>
+    <% end %>
+    <%= link_to owner_instrument_path(@instrument), method: :delete, class: 'btn btn-secondary' do %>
+      <i class="fa fa-trash fa-lg"></i>
+    <% end %>
   <% end %>
-  <%= link_to "Rent", instrument_path(@instrument) %>
-  <%= link_to "go back to instrument", instruments_path  %>
+  <%= link_to "Louer", instrument_path(@instrument), class: 'btn btn-secondary' %>
+  <%= link_to "Retour", instruments_path, class: 'btn btn-secondary'  %>
 
