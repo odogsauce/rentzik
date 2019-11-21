@@ -1,7 +1,7 @@
   <div class="container">
     <%= simple_form_for(@instrument, url: owner_instrument_path, method: :patch) do |f| %>
     <%= f.input :description %>
-    <%= f.input :category %>
+    <%= f.input :category, collection: ["vents", "cordes", "percussions"] %>
     <%= f.input :unit_price %>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>

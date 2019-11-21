@@ -3,7 +3,7 @@
   <%= simple_form_for :query, url: instruments_path, method: "GET" do |f| %>
   <%= f.input :category, collection: ["vents", "cordes", "percussions"] %>
   <%= f.input :description %>
-  <%= f.submit :submit, :label => "submit", class: "btn btn-primary" %>
+  <%= f.submit :submit, :label => "submit", class: "btn btn-success" %>
 <% end %>
 <%= @instruments %>
 
