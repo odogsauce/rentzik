@@ -3,7 +3,12 @@ class InstrumentsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @instruments = Instrument.all
+    if params[:description].present? && params[:category].present?
+      sql_query = "description ILIKE :description AND category = :category"
+      @instruments = Instrument.where(sql_query, {description: "%#{params[:description]}%", category: params[:category]})
+    else
+      @instruments = Instrument.all
+    end
 
     @users = User.geocoded
 
