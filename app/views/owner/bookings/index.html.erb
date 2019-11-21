@@ -10,7 +10,7 @@
                 <%#= link_to instrument.description, owner_instrument_path(instrument), class: 'btn btn-secondary' %>
                 <p><%= booking.begin_at %> <%= booking.begin_at %> <%= booking.final_price %></p>
               </div>
-              <%= link_to "delete", owner_booking_path(booking.id), method: :delete, class: "btn btn-warning"%>
+              <%= link_to "Del", owner_booking_path(booking), method: :delete, class: "btn btn-warning"%>
             </div>
           </div>
         </div>

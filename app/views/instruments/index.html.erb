@@ -3,7 +3,7 @@
     <% @instruments.each do |instrument| %>
       <div class="col-4">
         <div class="card-trip">
-          <img <%= cl_image_tag instrument.photo, height: 300, width: 400, crop: :fill %>
+          <img <%#= cl_image_tag instrument.photo, height: 300, width: 400, crop: :fill %>
             <div class="card-trip-infos">
               <div>
                 <%= link_to instrument.description, instrument_path(instrument), class: 'btn btn-secondary' %>
