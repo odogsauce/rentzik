@@ -1,23 +1,12 @@
 <form id="formhome">
   <h2>Vous souhaitez louer :</h2>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Quoi ?</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Catégorie">
-    <small id="emailHelp" class="form-text text-muted">Choisissez une catégorie</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Où ?</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ville">
-    <small id="emailHelp" class="form-text text-muted">Quelle ville ?</small>
-  </div>
-    <div class="form-group">
-    <label for="exampleInputEmail1">Quand ?</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Dates">
-    <small id="emailHelp" class="form-text text-muted">Le jour qui vous intéresse.</small>
-  </div>
-  <%= link_to "SUBMIT", instruments_path, :class => "btn btn-success" %>
-</form>
-instruments
+  <%= simple_form_for :query, url: instruments_path, method: "GET" do |f| %>
+  <%= f.input :category, collection: ["vents", "cordes", "percussions"] %>
+  <%= f.input :description %>
+  <%= f.submit :submit, :label => "submit", class: "btn btn-primary" %>
+<% end %>
+<%= @instruments %>
+
 <div class="d-flex flex-wrap justify-content-between">
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_url "cables.jpg" %>)">
     Câbles
