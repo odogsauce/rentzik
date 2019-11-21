@@ -5,14 +5,14 @@ class InstrumentsController < ApplicationController
   def index
     @instruments = Instrument.all
 
-    # @instruments = Instrument.geocoded #returns flats with coordinates
+    @users = User.geocoded
 
-    # @markers = @instruments.map do |instrument|
-    #   {
-    #     lat: instrument.user.latitude,
-    #     lng: instrument.user.longitude
-    #   }
-    # end
+    @markers = @users.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude
+      }
+    end
   end
 
   def show
