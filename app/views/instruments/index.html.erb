@@ -5,10 +5,11 @@
     <% @instruments.each do |instrument| %>
       <div class="col-4">
         <div class="card-trip">
+          <%= cl_image_tag instrument.photo, height: 200, width: 300, crop: :fill %>
             <div class="card-trip-infos">
               <div>
                 <%= link_to instrument.description, instrument_path(instrument), class: 'btn btn-secondary' %>
-                <p><%= instrument.category %></p>
+                <p>Catégorie : <%= instrument.category %></p>
               </div>
               <h2 class="card-trip-pricing"><%= instrument.unit_price %></h2>
             </div>

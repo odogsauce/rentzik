@@ -1,6 +1,7 @@
 <div class='text-center'> <h1>Présentation de l'instrument.</h1> </div>
 <h2><%= @instrument.description %></h2>
-  <%= @instrument.category %>
+<%= cl_image_tag @instrument.photo, height: 200, width: 300, crop: :fill %>
+<p>Catégorie : <%= @instrument.category %></p>
   <br>
   <% if !current_user.nil? %>
     <%= link_to  edit_owner_instrument_path(@instrument), class: 'btn btn-secondary' do %>
