@@ -10,13 +10,11 @@ class InstrumentsController < ApplicationController
       @instruments = Instrument.all
     end
 
-    @users = User.geocoded
-
-    @markers = @users.map do |user|
+    @markers = @instruments.map do |instrument|
       {
-        lat: user.latitude,
-        lng: user.longitude,
-        infoWindow: render_to_string(partial: "instruments/info_window", locals: { user: user })
+        lat: instrument.user.latitude,
+        lng: instrument.user.longitude,
+        infoWindow: render_to_string(partial: "instruments/info_window", locals: { user: instrument.user })
       }
     end
   end
