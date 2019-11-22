@@ -10,6 +10,7 @@
       <div class="col-4">
         <div class="card-trip">
           <img <%= cl_image_tag instrument.photo, height: 200, width: 300, crop: :fill %>
+
             <div class="card-trip-infos">
               <div>
                 <%= link_to instrument.description, owner_instrument_path(instrument), class: 'btn btn-warning' %>
