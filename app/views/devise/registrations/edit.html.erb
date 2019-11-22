@@ -6,7 +6,7 @@
           <br><br>
           <%= cl_image_tag current_user.photo,width: 300, height: 300, crop: :fill %><br><br><br>
           <% if current_user.owner %>
-            <p><strong>Propriétaire</strong> de <%= Instrument.where(user_id: current_user).length %> <%= link_to "instruments", owner_instruments_path %></p>
+            <p><strong>Propriétaire</strong> de <%= Instrument.where(user_id: current_user).length %> <%= link_to "instruments", owner_instruments_path, class: "btn btn-edit" %></p>
           <% end %>
           <p><%= Booking.where(user_id: current_user).length %> <%= link_to "réservations", owner_bookings_path,  class: "btn btn-edit" %> en cours </p>
           <p><strong>Pseudo</strong> : <%= current_user.username %></p>
@@ -52,8 +52,7 @@
     </div>
       <div row>
         <div class="edit-cancel text-right">
-          <h3>Cancel my account</h3>
-            <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+            <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn-cancel" %></p>
         </div>
       </div>
 
