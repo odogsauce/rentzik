@@ -4,9 +4,13 @@
       <div class="col-6 d-flex justify-content-md-center w" >
         <div class="shadow p-3 mb-5 bg-white rounded">
           <br><br>
-          <%= cl_image_tag current_user.photo,width: 300, height: 300, crop: :fill %>
-<!--         <div class="btn btn-success text-center">MES RESERVATION</div><br>
-        <div class="btn btn-success">MES INSTRUMENTS</div> -->
+          <%= cl_image_tag current_user.photo,width: 300, height: 300, crop: :fill %><br><br><br>
+          <% if current_user.owner %>
+            <p><strong>Propriétaire</strong> de <%= Instrument.where(user_id: current_user).length %> <%= link_to "instruments", owner_instruments_path %></p>
+          <% end %>
+          <p><%= Booking.where(user_id: current_user).length %> <%= link_to "réservations", owner_bookings_path %> en cours </p>
+          <p><strong>Pseudo</strong> : <%= current_user.username %></p>
+          <p><strong>Adresse</strong> : <%= current_user.address %></p>
         </div>
       </div>
 
