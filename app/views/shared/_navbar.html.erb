@@ -12,7 +12,7 @@
     <% end %>
   </div>
         <% if user_signed_in? %>
-          <img class="avatar-large dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%= image_url "avatar.png" %>" />
+          <img class="avatar-large dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%= cl_image_path current_user.photo,width: 300, height: 300, crop: :fill %>" />
         <% else %>
           <img class="avatar-large dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%= image_url "avatar.png" %>" />
         <% end %>
