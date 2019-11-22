@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.instrument = Instrument.find(params[:instrument_id])
     if @booking.save
-      redirect_to instruments_path
+      redirect_to root_path
     else
       render :new
     end
