@@ -1,8 +1,13 @@
 .card-trip {
+  border-radius: 10px;
   margin: 16px;
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 2px 2px 2px 1px rgba(100, 100, 100, 100);
+}
+.card-trip:hover {
+transform: scale(1.1);
+transition: 0.15s;
 }
 
 .card-trip > img {
