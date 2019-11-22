@@ -8,7 +8,7 @@
           <% if current_user.owner %>
             <p><strong>Propriétaire</strong> de <%= Instrument.where(user_id: current_user).length %> <%= link_to "instruments", owner_instruments_path %></p>
           <% end %>
-          <p><%= Booking.where(user_id: current_user).length %> <%= link_to "réservations", owner_bookings_path %> en cours </p>
+          <p><%= Booking.where(user_id: current_user).length %> <%= link_to "réservations", owner_bookings_path,  class: "btn btn-edit" %> en cours </p>
           <p><strong>Pseudo</strong> : <%= current_user.username %></p>
           <p><strong>Adresse</strong> : <%= current_user.address %></p>
         </div>
@@ -45,7 +45,7 @@
           </div>
 
             <div class="form-actions">
-              <%= f.button :submit, "Update", class:"btn btn-success" %>
+              <%= f.button :submit, "Update", class: "btn btn-success" %>
             </div>
           <% end %>
         </div>
@@ -57,5 +57,5 @@
         </div>
       </div>
 
-      <%= link_to "Back", :back, class: "btn btn-success" %> 
+      <%= link_to "Back", :back, class: "btn btn-success" %>
 </div>
