@@ -1,10 +1,40 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <a class="navbar-brand" href="/">
     <%= image_tag "rentzik_logo.png" %>
-</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  </a>
+
+
+
+  <div class="d-flex p-2 bd-highlight align-items-center">
+    <div class="button-search">
+      <%= link_to root_path, class:'' do %>
+      <i class="fas fa-search"></i> <span>Rechercher</span>
+      <% end %>
+    </div>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <% if user_signed_in? %>
+            <img class="avatar-large dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%= image_url "rahou.jpg" %>" />
+          <% else %>
+            <img class="avatar-large dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%= image_url "avatar.png" %>" />
+          <% end %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <% if user_signed_in? %>
+            <%= link_to "Mon profil",  edit_user_registration_path, class: "dropdown-item" %>
+            <%= link_to "Mes réservations", owner_bookings_path, class: "dropdown-item" %>
+            <%= link_to "Mes instruments", owner_instruments_path, class: "dropdown-item" %>
+            <%= link_to "Déconnexion",  destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          <% else %>
+            <%= link_to "Connexion",  new_user_session_path, class: "dropdown-item" %>
+            <%= link_to "Enregistrement",  new_user_registration_path, class: "dropdown-item" %>
+          <% end %>
+          </div>
+        </li>
+      </ul>
+    </div>
 
   <div class="button-search">
     <%= link_to root_path, class:'' do %>
