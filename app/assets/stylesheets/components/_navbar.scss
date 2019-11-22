@@ -16,7 +16,12 @@
 .button-search a {
   font-size: 20px;
   color: white;
-  margin-left: 900px;
   font-weight: bold;
+  text-decoration: none;
+  margin: 15px;
+}
+
+.button-search :hover {
+color: #cb6b17;
 }
 
