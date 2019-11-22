@@ -11,6 +11,10 @@ class Owner::BookingsController < ApplicationController
     redirect_to owner_bookings_path
   end
 
+  def show
+    @booking = Booking.find(params[:id])
+  end
+
   private
 
   def set_booking

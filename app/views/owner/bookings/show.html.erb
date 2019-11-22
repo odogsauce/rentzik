@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="card text-dark" id ="show">
+    <span>Booké avec : <%= @booking.user.username %></span>
+    <span>Instrument réservé : <%= @booking.instrument.description %></span>
+    <span>Prix total : <%= @booking.final_price %></span>
+    <span>Début de la réservation : <%= @booking.begin_at %></span>
+    <span>Fin de la réservation : <%= @booking.end_at %></span>
+  </div>
+  <%= link_to "Retour", owner_booking_path, class: "btn btn-success"%>
+</div>
