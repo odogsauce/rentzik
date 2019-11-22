@@ -11,7 +11,11 @@
     <i class="fas fa-search"></i> <span>Rechercher</span>
     <% end %>
   </div>
-
+        <% if user_signed_in? %>
+          <img class="avatar-large dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%= image_url "avatar.png" %>" />
+        <% else %>
+          <img class="avatar-large dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%= image_url "avatar.png" %>" />
+        <% end %>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
