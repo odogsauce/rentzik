@@ -2,7 +2,9 @@
 
   <div class="container">
     <form id="formhome">
-    <h2>Vous souhaitez louer :</h2>
+    <marquee direction="up" scrollamount="2" height="200" width="350"><h2>Vous souhaitez louer :</h2></marquee>
+
+
     <%= simple_form_for :query, url: instruments_path, method: "GET" do |f| %>
     <%= f.input :category, collection: ["vents", "cordes", "percussions"] %>
     <%= f.input :description %>
