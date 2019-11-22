@@ -1,23 +1,12 @@
-<form id="formhome">
-  <h2>Vous souhaitez louer :</h2>
-  <%= simple_form_for :query, url: instruments_path, method: "GET" do |f| %>
-  <%= f.input :category, collection: ["vents", "cordes", "percussions"] %>
-  <%= f.input :description %>
-  <%= f.submit :submit, :label => "submit", class: "btn btn-success" %>
-<% end %>
-<%= @instruments %>
 
-<div class="d-flex flex-wrap justify-content-between">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_url "cables.jpg" %>)">
-    Câbles
+
+  <div class="container">
+    <form id="formhome">
+    <h2>Vous souhaitez louer :</h2>
+    <%= simple_form_for :query, url: instruments_path, method: "GET" do |f| %>
+    <%= f.input :category, collection: ["vents", "cordes", "percussions"] %>
+    <%= f.input :description %>
+    <%= f.submit :submit, :label => "submit", class: "btn btn-success" %>
+    <% end %>
+    <%= @instruments %>
   </div>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_url "instruments.jpg" %>)">
-    Instruments
-  </div>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_url "lumieres.jpg" %>)">
-    Lumières
-  </div>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_url "materiel.jpg" %>)">
-    Matériel
-  </div>
-</div>
